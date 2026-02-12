@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokal Peduli Indonesia</title>
+    <link rel="shortcut icon" type="tkj-icon" href="LOGO LOKAL.png"/>
+    <style>
+        /* 1. VARIABEL CSS (:root) */
+        :root {
+            /* Tema Biru Tua (Default) */
+            --bg-overlay: rgba(10, 25, 47, 0.85); /* Biru tua transparan */
+            --text-color: #ffffff;
+            --card-bg: rgba(21, 50, 90, 0.7);
+            --accent-color: #4aa3ff;
+            --blur-amount: 8px;
+        }
+
+        /* 2. TEMA GELAP (Alternatif) */
+        .dark-theme {
+            --bg-overlay: rgba(5, 15, 30, 0.9);
+            --text-color: #e6f1ff;
+            --card-bg: rgba(15, 35, 60, 0.8);
+            --accent-color: #74c0ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            transition: 0.5s;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Background dengan foto blur */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.pinimg.com/736x/22/b5/60/22b5604eca105ae195aa809dc734d071.jpg'); /* Foto gedung modern */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(var(--blur-amount)) brightness(0.7);
+            z-index: -2;
+        }
+
+        /* Overlay warna biru tua di atas background blur */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-overlay);
+            z-index: -1;
+            transition: background 0.5s;
+        }
+
+        /* Tombol Toggle */
+        .btn-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 30px;
+            border: 2px solid var(--accent-color);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            color: var(--text-color);
+            font-weight: bold;
+            transition: 0.3s;
+            z-index: 10;
+        }
+
+        .btn-toggle:hover {
+            background: var(--accent-color);
+            color: #0a192f;
+            border-color: var(--accent-color);
+        }
+
+        .profil-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px;
+        }
+
+        h2, p {
+            color: var(--text-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+            padding: 5px 15px;
+            border-radius: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        .link-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(5px);
+            display: block;
+            text-align: center;
+            padding: 18px;
+            margin-bottom: 18px;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: 0.4s;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            background: var(--accent-color);
+            color: #0a192f;
+            border-color: var(--accent-color);
+            box-shadow: 0 12px 25px rgba(74, 163, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .profil-img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .btn-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="Lokalpeduliindonesia.png" class="profil-img">
+    <h2>Lokal Peduli Indonesia</h2> 
+    <p>Kolaborasi Digital Untuk Kemajuan UMKM</p> 
+
+    <div class="container">
+        <a href="#" class="link-card" target="_blank">WEBSITE LOPEIN</a>
+        <a href="https://www.instagram.com/lokalpeduliindonesia" class="link-card" target="_blank">📱 INSTAGRAM</a>
+        <a href="https://www.tiktok.com/@lope_indonesiaa" class="link-card" target="_blank">🎵 TIKTOK</a>
+    </div>
+
+</body>
+</html>
